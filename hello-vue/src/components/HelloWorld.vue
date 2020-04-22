@@ -8,6 +8,7 @@
 <script>
 export default {
   name: 'HelloWorld',
+  // we created data to store a message that will change based on api call
   data() {
     return {
       helloMessage: ''
@@ -16,6 +17,7 @@ export default {
   props: {
     msg: String
   },
+  // this function is the api call that changes the message on the site
   mounted() {
     this.$hello_api.getHelloMessage().then(resp => {
       this.helloMessage = resp.message
